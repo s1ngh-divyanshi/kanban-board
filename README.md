@@ -1,16 +1,92 @@
-# React + Vite
+# Kanban Productivity Board
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive, single-page Kanban board built with **React 18** and **Vite**. Organize tasks across workflow columns, filter by keyword or priority in real time, and persist your board automatically in the browser.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **Multi-Column Workflow**: Manage tasks across **To Do**, **In Progress**, and **Done** columns with live task counters.
+- **Task Management**: Create tasks with priority levels (`Low`, `Medium`, `High`), move cards between columns, or delete completed items.
+- **Instant Search & Filtering**: Filter cards across all columns by title, description, or priority using derived state (`useMemo`).
+- **Automatic Persistence**: Saves and restores board state via `window.localStorage`.
+- **Clean Light Theme**: Styled with CSS custom properties (Crisp Light Gray, Deep Indigo, Electric Violet, and Coral Pink accents) and `lucide-react` icons.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend**: React 18+ (Functional Components & Hooks)
+- **Build Tool**: Vite
+- **Icons**: `lucide-react`
+- **Styling**: CSS3 (CSS Grid, Flexbox, Custom Properties)
+- **Linting**: ESLint
+
+---
+
+## Project Structure
+
+```text
+kanban-board/
+├── public/                     # Static assets
+├── src/
+│   ├── components/
+│   │   ├── Column.jsx          # Status column container
+│   │   ├── FilterBar.jsx       # Search input & priority dropdown
+│   │   └── TaskCard.jsx        # Individual task card with controls
+│   ├── data/
+│   │   └── initialTasks.js     # Column definitions & seed data
+│   ├── App.jsx                 # Main board state & persistence
+│   ├── App.css                 # Theme variables & grid layout
+│   └── main.jsx                # React entry point
+├── eslint.config.js            # ESLint configuration
+├── index.html                  # HTML shell
+├── package.json                # Dependencies & scripts
+└── vite.config.js              # Vite configuration
+```
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- **Node.js** (v18 or higher) and **npm**
+
+### Installation & Local Development
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/s1ngh-divyanshi/<repo-name>.git
+   cd <repo-name>
+   ```
+
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
+   Open the local URL printed in your terminal (typically `http://localhost:5173`).
+
+### Production Build & Linting
+
+```bash
+# Build optimized production bundle into dist/
+npm run build
+
+# Preview the production build locally
+npm run preview
+
+# Run ESLint checks
+npm run lint
+```
+
+---
+
+## License
+
+Distributed under the [MIT License](https://www.google.com/search?q=LICENSE).
